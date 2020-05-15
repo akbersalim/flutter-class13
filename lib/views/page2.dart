@@ -48,6 +48,7 @@ class _StudentBodyState extends State<StudentBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: agecontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -60,6 +61,7 @@ class _StudentBodyState extends State<StudentBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: rnocontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
