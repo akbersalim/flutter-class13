@@ -48,6 +48,7 @@ class _EmpBodyState extends State<EmpBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: emidcontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(

@@ -48,6 +48,7 @@ class _PdtBodyState extends State<PdtBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: pdidcontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
