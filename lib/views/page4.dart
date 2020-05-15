@@ -48,6 +48,7 @@ class _StudentBodyState extends State<StudentBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: agecontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -60,6 +61,7 @@ class _StudentBodyState extends State<StudentBody> {
             ),
             SizedBox(height: 10),
             TextField(
+              keyboardType: TextInputType.numberWithOptions(),
               controller: rnocontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -88,14 +90,14 @@ class _StudentBodyState extends State<StudentBody> {
                 });
               },
               shape:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
+              OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
               child: Text(
                 "ENTER",
                 style: TextStyle(color: Colors.purple),
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height - 352,
+              height: MediaQuery.of(context).size.height - 611,
               child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: name.length == null ? 0 : name.length,

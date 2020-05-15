@@ -1,33 +1,45 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class StudentBody extends StatefulWidget {
+class BookBody extends StatefulWidget {
   @override
-  _StudentBodyState createState() => _StudentBodyState();
+  _BookBodyState createState() => _BookBodyState();
 }
 
-class _StudentBodyState extends State<StudentBody> {
+class _BookBodyState extends State<BookBody> {
   @override
   var name = [
-    "Reuel",
-    "Rahul",
-    "Akhil",
-    "Keyser",
-    "Kate",
-    "Patrick",
-    "Jane",
-    "Mob",
-    "Bryan",
-    "Kim",
-    "Jim"
+    "Dune",
+    "A Sword of Ice and Fire",
+    "A Clash of Kings",
+    "A Feast for Crows",
+    "A Storm of Swords",
+    "A Dance with Dragons",
+    "Kimetsu no Yaiba",
+    "Shingeki no Kyogin",
+    "The Philosopher's Stone",
+    "Chamber of Secrets",
+    "Prisoner of Askaban"
   ];
-  var age = [21, 23, 30, 25, 23, 30, 27, 25, 21, 26, 25];
-  var rollno = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  var auth = [
+    "Frank Herbert",
+    "G.R.R Martin",
+    "G.R.R Martin",
+    "G.R.R Martin",
+    "G.R.R Martin",
+    "G.R.R Martin",
+    "Koyoharu Gotouge",
+    "Hajime Isayama",
+    "J.K Rowling",
+    "J.K Rowling",
+    "J.K Rowling"
+  ];
+  var bkno = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   Widget build(BuildContext context) {
     TextEditingController namecontroller = TextEditingController();
-    TextEditingController rnocontroller = TextEditingController();
-    TextEditingController agecontroller = TextEditingController();
+    TextEditingController authcontroller = TextEditingController();
+    TextEditingController bknocontroller = TextEditingController();
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Column(
@@ -39,61 +51,60 @@ class _StudentBodyState extends State<StudentBody> {
               controller: namecontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
-                  labelText: "Enter name ",
-                  labelStyle: TextStyle(color: Colors.purple),
+                  labelText: "Enter book name",
+                  labelStyle: TextStyle(color: Colors.blue),
                   hintText: "Name:",
                   border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextField(
-              keyboardType: TextInputType.numberWithOptions(),
-              controller: agecontroller,
+              controller: authcontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
-                  labelText: "Enter age ",
-                  labelStyle: TextStyle(color: Colors.purple),
-                  hintText: "Age:",
+                  labelText: "Enter author",
+                  labelStyle: TextStyle(color: Colors.blue),
+                  hintText: "Author:",
                   border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextField(
               keyboardType: TextInputType.numberWithOptions(),
-              controller: rnocontroller,
+              controller: bknocontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
-                  labelText: "Enter roll no:  ",
-                  labelStyle: TextStyle(color: Colors.purple),
-                  hintText: "Roll No:",
+                  labelText: "Enter book no:",
+                  labelStyle: TextStyle(color: Colors.blue),
+                  hintText: "Book No:",
                   border: OutlineInputBorder()),
             ),
             RaisedButton(
               elevation: 10.0,
               highlightElevation: 1.0,
-              splashColor: Colors.purpleAccent,
+              splashColor: Colors.blueAccent,
               onPressed: () {
                 var nam = namecontroller.text;
-                var rno = rnocontroller.text;
-                var ag = agecontroller.text;
+                var aut = authcontroller.text;
+                var bkn = bknocontroller.text;
                 namecontroller.clear();
-                rnocontroller.clear();
-                agecontroller.clear();
+                authcontroller.clear();
+                bknocontroller.clear();
                 setState(() {
                   name.add(nam.toString());
-                  rollno.add(int.parse(rno));
-                  age.add(int.parse(ag));
+                  auth.add(aut.toString());
+                  bkno.add(int.parse(bkn));
                 });
               },
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
               child: Text(
                 "ENTER",
-                style: TextStyle(color: Colors.purple),
+                style: TextStyle(color: Colors.blue),
               ),
             ),
             Container(
@@ -120,26 +131,26 @@ class _StudentBodyState extends State<StudentBody> {
                           onPressed: () {
                             setState(() {
                               name.removeAt(index);
-                              age.removeAt(index);
-                              rollno.removeAt(index);
+                              auth.removeAt(index);
+                              bkno.removeAt(index);
                             });
                           },
-                          highlightColor: Colors.purpleAccent,
+                          highlightColor: Colors.blueAccent,
                           shape: CircleBorder(),
                           elevation: 20.0,
                           child: Icon(
                             Icons.delete,
-                            color: Colors.purple,
+                            color: Colors.blue,
                           )),
                       title: Text(
                         "Name: " + name[index],
-                        style: TextStyle(color: Colors.purple),
+                        style: TextStyle(color: Colors.blue),
                       ),
-                      subtitle: Text("Age: " +
-                          age[index].toString() +
+                      subtitle: Text("Author: " +
+                          auth[index] +
                           "\n" +
-                          "Roll No: " +
-                          rollno[index].toString()),
+                          "Book No: " +
+                          bkno[index].toString()),
                     ),
                   );
                 },

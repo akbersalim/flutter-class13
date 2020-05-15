@@ -1,33 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class StudentBody extends StatefulWidget {
+class EmpBody extends StatefulWidget {
   @override
-  _StudentBodyState createState() => _StudentBodyState();
+  _EmpBodyState createState() => _EmpBodyState();
 }
 
-class _StudentBodyState extends State<StudentBody> {
+class _EmpBodyState extends State<EmpBody> {
   @override
   var name = [
-    "Reuel",
-    "Rahul",
-    "Akhil",
-    "Keyser",
-    "Kate",
-    "Patrick",
-    "Jane",
-    "Mob",
-    "Bryan",
-    "Kim",
-    "Jim"
+    "Gohan",
+    "Nezuko",
+    "Eren",
+    "Shigeo",
+    "Ritsu",
+    "Jia",
+    "Izuku",
+    "Katsuki",
+    "Kurapika",
+    "Leorio",
+    "Ashish"
   ];
-  var age = [21, 23, 30, 25, 23, 30, 27, 25, 21, 26, 25];
-  var rollno = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  var emid = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  var sala = [1000, 1020, 1300, 1400, 1450, 1460, 1470, 1480, 1590, 1610, 1711];
 
   Widget build(BuildContext context) {
     TextEditingController namecontroller = TextEditingController();
-    TextEditingController rnocontroller = TextEditingController();
-    TextEditingController agecontroller = TextEditingController();
+    TextEditingController emidcontroller = TextEditingController();
+    TextEditingController salacontroller = TextEditingController();
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Column(
@@ -39,65 +39,64 @@ class _StudentBodyState extends State<StudentBody> {
               controller: namecontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.red, width: 2.0),
                   ),
-                  labelText: "Enter name ",
-                  labelStyle: TextStyle(color: Colors.purple),
+                  labelText: "Enter employee name",
+                  labelStyle: TextStyle(color: Colors.red),
                   hintText: "Name:",
                   border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextField(
-              keyboardType: TextInputType.numberWithOptions(),
-              controller: agecontroller,
+              controller: emidcontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.red, width: 2.0),
                   ),
-                  labelText: "Enter age ",
-                  labelStyle: TextStyle(color: Colors.purple),
-                  hintText: "Age:",
+                  labelText: "Enter employee id",
+                  labelStyle: TextStyle(color: Colors.red),
+                  hintText: "Employee Id:",
                   border: OutlineInputBorder()),
             ),
             SizedBox(height: 10),
             TextField(
               keyboardType: TextInputType.numberWithOptions(),
-              controller: rnocontroller,
+              controller: salacontroller,
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple, width: 2.0),
+                    borderSide: BorderSide(color: Colors.red, width: 2.0),
                   ),
-                  labelText: "Enter roll no:  ",
-                  labelStyle: TextStyle(color: Colors.purple),
-                  hintText: "Roll No:",
+                  labelText: "Enter Salary",
+                  labelStyle: TextStyle(color: Colors.red),
+                  hintText: "Salary",
                   border: OutlineInputBorder()),
             ),
             RaisedButton(
               elevation: 10.0,
               highlightElevation: 1.0,
-              splashColor: Colors.purpleAccent,
+              splashColor: Colors.redAccent,
               onPressed: () {
                 var nam = namecontroller.text;
-                var rno = rnocontroller.text;
-                var ag = agecontroller.text;
+                var eid = emidcontroller.text;
+                var sal = salacontroller.text;
                 namecontroller.clear();
-                rnocontroller.clear();
-                agecontroller.clear();
+                emidcontroller.clear();
+                salacontroller.clear();
                 setState(() {
                   name.add(nam.toString());
-                  rollno.add(int.parse(rno));
-                  age.add(int.parse(ag));
+                  emid.add(int.parse(eid));
+                  sala.add(int.parse(sal));
                 });
               },
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
               child: Text(
                 "ENTER",
-                style: TextStyle(color: Colors.purple),
+                style: TextStyle(color: Colors.red),
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height - 352,
+              height: MediaQuery.of(context).size.height - 611,
               child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: name.length == null ? 0 : name.length,
@@ -120,26 +119,26 @@ class _StudentBodyState extends State<StudentBody> {
                           onPressed: () {
                             setState(() {
                               name.removeAt(index);
-                              age.removeAt(index);
-                              rollno.removeAt(index);
+                              emid.removeAt(index);
+                              sala.removeAt(index);
                             });
                           },
-                          highlightColor: Colors.purpleAccent,
+                          highlightColor: Colors.redAccent,
                           shape: CircleBorder(),
                           elevation: 20.0,
                           child: Icon(
                             Icons.delete,
-                            color: Colors.purple,
+                            color: Colors.red,
                           )),
                       title: Text(
                         "Name: " + name[index],
-                        style: TextStyle(color: Colors.purple),
+                        style: TextStyle(color: Colors.red),
                       ),
-                      subtitle: Text("Age: " +
-                          age[index].toString() +
+                      subtitle: Text("Employee Id: " +
+                          emid[index].toString() +
                           "\n" +
-                          "Roll No: " +
-                          rollno[index].toString()),
+                          "Salary: " +
+                          sala[index].toString()),
                     ),
                   );
                 },
