@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  var col = 0xff3498DB;
+  var col=Colors.blue;
   var i = 0;
 
   @override
@@ -99,9 +99,9 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
           ),
         ),
         bottomNavigationBar: Container(
-          color: Color(col),
+          color: col,
           child: Material(
-            color: Color(col),
+            color: col,
             child: TabBar(
               unselectedLabelColor: Colors.grey,
               labelColor: Colors.white,
@@ -128,13 +128,13 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 i = t;
                 setState(() {
                   if (i == 0)
-                    col = 0xff3498DB;
+                    col = Colors.blue;
                   else if (i == 1)
-                    col = 0xffE74C3C;
+                    col = Colors.red;
                   else if (i == 2)
-                    col = 0xff58D68D;
+                    col = Colors.green;
                   else
-                    col = 0xffA569BD;
+                    col = Colors.purple;
                 });
               },
             ),
