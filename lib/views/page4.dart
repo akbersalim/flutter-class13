@@ -106,7 +106,8 @@ class _StudentBodyState extends State<StudentBody> {
                     elevation: 3.0,
                     child: ListTile(
                       leading: Icon(
-                        Icons.account_circle,
+                        Icons.perm_identity,
+                        color: Colors.purple,
                         size: 50.0,
                       ),
 

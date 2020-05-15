@@ -117,7 +117,8 @@ class _BookBodyState extends State<BookBody> {
                     elevation: 3.0,
                     child: ListTile(
                       leading: Icon(
-                        Icons.account_circle,
+                        Icons.book,
+                        color: Colors.blue,
                         size: 50.0,
                       ),
 

@@ -107,6 +107,7 @@ class _EmpBodyState extends State<EmpBody> {
                     child: ListTile(
                       leading: Icon(
                         Icons.account_circle,
+                        color: Colors.red,
                         size: 50.0,
                       ),
 
