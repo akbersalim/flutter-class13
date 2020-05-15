@@ -84,9 +84,9 @@ class _EmpBodyState extends State<EmpBody> {
                 emidcontroller.clear();
                 salacontroller.clear();
                 setState(() {
-                  name.add(nam.toString());
-                  emid.add(int.parse(eid));
-                  sala.add(int.parse(sal));
+                  nam != "" ? name.add(nam.toString()) : name.add("");
+                  eid != "" ? emid.add(int.parse(eid)) : emid.add(0);
+                  sal != "" ? sala.add(int.parse(sal)) : sala.add(0);
                 });
               },
               shape:

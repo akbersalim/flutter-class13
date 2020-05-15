@@ -84,13 +84,13 @@ class _StudentBodyState extends State<StudentBody> {
                 rnocontroller.clear();
                 agecontroller.clear();
                 setState(() {
-                  name.add(nam.toString());
-                  rollno.add(int.parse(rno));
-                  age.add(int.parse(ag));
+                  nam != "" ? name.add(nam.toString()) : name.add("");
+                  rno != "" ? rollno.add(int.parse(rno)) : rollno.add(0);
+                  ag != "" ? age.add(int.parse(ag)) : age.add(0);
                 });
               },
               shape:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(7.0)),
               child: Text(
                 "ENTER",
                 style: TextStyle(color: Colors.purple),

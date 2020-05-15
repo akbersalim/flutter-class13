@@ -84,9 +84,9 @@ class _PdtBodyState extends State<PdtBody> {
                 pdidcontroller.clear();
                 priccontroller.clear();
                 setState(() {
-                  name.add(nam.toString());
-                  pdid.add(int.parse(pid));
-                  pric.add(int.parse(pri));
+                  nam != "" ? name.add(nam.toString()) : name.add("");
+                  pid != "" ? pdid.add(int.parse(pid)) : pdid.add(0);
+                  pri != "" ? pric.add(int.parse(pri)) : pric.add(0);
                 });
               },
               shape:

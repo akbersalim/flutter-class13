@@ -95,9 +95,9 @@ class _BookBodyState extends State<BookBody> {
                 authcontroller.clear();
                 bknocontroller.clear();
                 setState(() {
-                  name.add(nam.toString());
-                  auth.add(aut.toString());
-                  bkno.add(int.parse(bkn));
+                  nam != "" ? name.add(nam.toString()) : name.add("");
+                  aut != "" ? auth.add(aut.toString()) : auth.add("");
+                  bkn != "" ? bkno.add(int.parse(bkn)) : bkno.add(0);
                 });
               },
               shape:
